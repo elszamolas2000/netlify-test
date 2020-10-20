@@ -96,7 +96,7 @@ class Calculator extends Component {
 
   createTable = (acc) => {
     const temp = this.state.tableData;
-    temp.rows.map(e => {
+    temp.rows.forEach(e => {
       if (acc.id === e.id) {
         e.sum = <NumberFormat value={acc.sum} displayType={'text'} thousandSeparator={" "} renderText={value => <div>{value}  Forinttól</div>} />;
       }
