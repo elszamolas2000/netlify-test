@@ -4,7 +4,7 @@ import {
 } from 'mdbreact';
 import "./Contact.scss";
 
-import { AttentionSeeker, Slide } from "react-awesome-reveal";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 
 import emailjs from "emailjs-com"

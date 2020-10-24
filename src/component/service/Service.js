@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import {
     MDBCard, MDBCardBody, MDBCardHeader,
-    MDBRow, MDBContainer, MDBCol, MDBListGroup, MDBListGroupItem, MDBBtn
+    MDBRow, MDBContainer, MDBCol, MDBListGroup, MDBListGroupItem
 } from "mdbreact";
 
 import "./Service.scss";
 
-import Modal from '../calculator/Calculator';
 
-import { AttentionSeeker, Fade, Slide } from 'react-awesome-reveal';
+
+import { AttentionSeeker } from 'react-awesome-reveal';
 
 class Service extends Component {
 

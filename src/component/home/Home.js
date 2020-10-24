@@ -2,9 +2,9 @@ import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { Component } from "react";
 
 import "./Home.scss";
-import { Roll, Zoom } from "react-awesome-reveal";
+import { Roll } from "react-awesome-reveal";
 import withWindowSize from '../hoc/withWindowSize/withWindowSize';
-import Panel from "../../panel/Panel";
+import Panel from "..//panel/Panel";
 
 
 class Home extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MDBCard, MDBCardBody, MDBCardHeader, MDBCardText, MDBCardTitle, MDBCol, MDBIcon, MDBView, } from 'mdbreact';
 import "./Card.scss";
-import withWindowSize from '../component/hoc/withWindowSize/withWindowSize';
+import withWindowSize from '../hoc/withWindowSize/withWindowSize';
 import { Hinge } from 'react-awesome-reveal';
 
 class Card extends Component {

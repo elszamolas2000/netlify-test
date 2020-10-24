@@ -86,7 +86,8 @@ class Calculator extends Component {
       this.createTable({ id: "2", sum: 0 });
       this.createTable({ id: "3", sum: 8000 });
       this.setState({ collapseKata: false, [name]: value, isVisible: true, collapseMore: false, disabled: false, isKata: true });
-
+      const anchor = document.querySelector("#table")
+      anchor.scrollIntoView({ behavior: 'smooth' });
     }
     else {
       this.setState({ collapseKata: false, [name]: value, isVisible: false, collapseMore: true, isKata: false, disabled: false });

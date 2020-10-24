@@ -4,6 +4,9 @@
 
     margin-top: 10rem;
     scroll-margin-top: 5rem;
+    @media screen and(max-width:1196px) {
+        margin-top: 5rem;
+    }
 
     &-side {
 
