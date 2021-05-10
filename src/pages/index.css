@@ -1,0 +1,22 @@
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+::selection {
+  color: #fff;
+  background-color: #4b515d;
+}
+p {
+  margin: 0 !important;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+/* img[role="presentation"] {
+  display: none !important;
+} */
+.spec-select {
+  border: 2px solid red !important;
+}
