@@ -27,7 +27,6 @@ const ContactPanel = styled(MDBContainer)`
   margin-top: 7rem;
   overflow: hidden;
   text-align: center;
-
 `
 const Row = styled(MDBRow)`
   text-align: left;
@@ -57,6 +56,10 @@ const Typo = styled(MDBTypography)`
   @media screen and (max-width: 600px) {
     font-size: 1.5rem;
   }
+`
+
+const CardTitle = styled(MDBCardTitle)`
+  font-size: 1.25rem;
 `
 const Contact = () => {
   const { form } = useSelector(state => state.contact)
@@ -127,15 +130,15 @@ const Contact = () => {
                 <Typo tag="h2">Elérhetőségeink</Typo>
               </MDBCardHeader>
               <MDBCardBody className="text-info">
-                <MDBCardTitle tag="h5">Cégnév:</MDBCardTitle>
+                <CardTitle tag="p">Cégnév:</CardTitle>
                 <CardText>Elszámolás 2000 Bt.</CardText>
-                <MDBCardTitle tag="h5">Székhely:</MDBCardTitle>
+                <CardTitle tag="p">Székhely:</CardTitle>
                 <CardText>3300 Eger, Veres Péter út 3. Fszt 3.</CardText>
-                <MDBCardTitle tag="h5">Adószám:</MDBCardTitle>
+                <CardTitle tag="p">Adószám:</CardTitle>
                 <CardText>20955067-1-10</CardText>
-                <MDBCardTitle tag="h5">E-mail:</MDBCardTitle>
+                <CardTitle tag="p">E-mail:</CardTitle>
                 <CardText>elszamolas2000bt@gmail.com</CardText>
-                <MDBCardTitle tag="h5">Telefonszám</MDBCardTitle>
+                <CardTitle tag="p">Telefonszám:</CardTitle>
                 <CardText>+36/30-8696-420</CardText>
               </MDBCardBody>
             </Card>

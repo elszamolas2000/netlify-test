@@ -1,10 +1,23 @@
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdbreact"
 import React from "react"
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  InstapaperIcon,
+  InstapaperShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  ViberIcon,
+  ViberShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from "react-share"
 import styled from "styled-components"
 import SimpleFade from "../fade/simpleFade"
 import withWindowSize from "../hoc/withWindowSize"
 import Panel from "../panel/panel"
 import Heading from "../title/title"
+import Bubbles from "../../assets/bubbles.svg"
 
 const Container = styled(MDBContainer)`
   width: 100%;
@@ -45,13 +58,67 @@ const Typo = styled(MDBTypography)`
   }
 `
 
+const HeaderBox = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 6rem;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+`
+
+const SharedBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  margin: 2rem 0rem;
+`
+
+const Header = styled.h1`
+  @media screen and (max-width: 400px) {
+    font-size: 2rem;
+  }
+`
+// const Icon = styled(Bubbles)`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 1400px;
+//   height:150px;
+// `
+const url = "https://elszamolas2000bt.hu"
+const title = "Az első számú könyvelőiroda Egerben"
 const Home = ({ windowWidth }) => (
   <Container fluid id="home">
+    <HeaderBox>
+      <Header>Könyvelés Egerben</Header>
+      <SharedBox>
+        <FacebookShareButton hashtag="könyvelés" quote={title} url={url}>
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
+        <TwitterShareButton
+          title={title}
+          hashtags={["könyvelés", "elszámolas"]}
+          url={url}
+        >
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+        <ViberShareButton url={url} title={title}>
+          <ViberIcon size={32} round={true} />
+        </ViberShareButton>
+        <WhatsappShareButton url={url} title={title}>
+          <WhatsappIcon size={32} round={true} />
+        </WhatsappShareButton>
+      </SharedBox>
+      {/* <Icon /> */}
+    </HeaderBox>
+
     <SimpleFade>
       <Heading title="Bemutatkozás" />
       <Title className={"home-title"}>
         <MDBCol>
-          <Typo tag="h5">
+          <Typo tag="h3">
             Már több, mint 20 éve, hogy könyvelőirodánk kezdő és már működő
             cégek (Kft., Bt.), egyéni vállalkozások és non-profit szervezetek
             teljes körű könyvelését vállalja Egerben és környékén.

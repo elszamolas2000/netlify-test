@@ -117,6 +117,10 @@ const InputBox = styled.div`
   width: 100%;
 `
 
+const Tag = styled.p`
+  font-size: 1.3rem;
+`
+
 const Calculator = () => {
   const { process } = useSelector(state => state.calculator)
   const dispatch = useDispatch()
@@ -212,7 +216,7 @@ const Calculator = () => {
                     </Select>
                     <Collapse collapse={process.collapseKata}>
                       <Kata>
-                        <h5>Ön vagy az Ön cége KATÁS?</h5>
+                        <Tag>Ön vagy az Ön cége KATÁS?</Tag>
                         <div>
                           <MDBBtn onClick={computeKata} icon="thumbs-up">
                             Igen

@@ -28,6 +28,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preact`,
+    "gatsby-plugin-loadable-components-ssr",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
