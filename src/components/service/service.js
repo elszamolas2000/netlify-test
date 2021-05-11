@@ -84,9 +84,9 @@ const Service = () => {
     <SimpleFade>
       <Container id={"service"}>
         <Heading title="Szolgáltatásaink" fill="#B6244F" />
-        <Header tag="h5">
+        <Header tag="h3">
           Az alábbi, könyveléssel kapcsolatos és egyéb szolgáltatásaink
-          elérhetőek ügyfeleink számára.
+          elérhetőek ügyfeleink számára Eger és környékén.
         </Header>
         <Row>
           <Card border="rgba-teal-strong">

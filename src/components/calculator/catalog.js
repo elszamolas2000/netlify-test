@@ -28,7 +28,7 @@ const Catalog = () => {
     <CardCol>
       <MDBCard border="rgba-teal-strong">
         <MDBCardHeader>
-          <MDBTypography tag="h5">Bruttó áraink</MDBTypography>
+          <MDBTypography tag="p">Bruttó áraink</MDBTypography>
         </MDBCardHeader>
         <div style={{ textAlign: "center" }}>
           <CatalogWrapper>

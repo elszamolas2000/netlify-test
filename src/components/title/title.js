@@ -59,7 +59,7 @@ const Heading = ({ title, fill, color }) => (
     <BrushStrokeWrapper>
       <BrushStrokeIcon fill={fill || "#39a2ae"} />
     </BrushStrokeWrapper>
-    <Typo color={color || "#fff"} tag="h1">
+    <Typo color={color || "#fff"} tag="h2">
       {title}
     </Typo>
   </TitleWrapper>

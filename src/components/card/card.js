@@ -43,6 +43,7 @@ const CardText = styled(MDBCardText)`
 const CardLogo = styled(MDBIcon)`
   color: #f58d30;
 `
+
 const Card = ({ windowWidth, icon, title, text }) => {
   const [isHinge, setHinge] = useState(false)
 
@@ -73,7 +74,7 @@ const Card = ({ windowWidth, icon, title, text }) => {
         </MDBView>
       </TransparentHeader>
       <CardBody>
-        {windowWidth > 496 && <MDBCardTitle>{title}</MDBCardTitle>}
+        {windowWidth > 496 && <MDBCardTitle >{title}</MDBCardTitle>}
 
         <CardText>{windowWidth > 496 ? text : title}</CardText>
       </CardBody>
