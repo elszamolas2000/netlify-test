@@ -68,34 +68,34 @@ const Header = ({ windowWidth }) => {
       inline: "nearest",
     })
     let vcc = {
-      title: "Elszámolás 2000 Bt.-Könyvelés felsőfokon Egerben",
+      title: "Könyvelés felsőfokon Egerben",
       description:
         "Az Elszámolás 2000 Bt. több éves tapasztalattal végzi precíz munkáját a könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés és könyvelési tanácsadás területén Egerben.",
     }
     if (id === "#home") {
       vcc = {
-        title: "Elszámolás 2000 Bt.-Bemutatkozás",
+        title: "Bemutatkozás",
         description:
           "Az Elszámolás 2000 Bt. bemutatkozás: precizítás, megbízhatóság, magas minőség",
       }
     }
     if (id === "#service") {
       vcc = {
-        title: "Elszámolás 2000 Bt.-Szolgáltatásaink",
+        title: "Szolgáltatásaink",
         description:
           "Szolgáltatásaink: könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés,munkaügy, könyvelési tanácsadás.",
       }
     }
     if (id === "#calculator") {
       vcc = {
-        title: "Elszámolás 2000 Bt.-Könyvelési díj kalkulátor",
+        title: "Könyvelési díj kalkulátor",
         description:
           "A könyvelési díj kalkulátorral kiszámolhatja, mennyibe kerülne Önnek, ha igénybe venné a szolgáltatásainkat.",
       }
     }
     if (id === "#contact") {
       vcc = {
-        title: "Elszámolás 2000 Bt.-Kapcsolat",
+        title: "Kapcsolat",
         description:
           "Küldjön üzenetet, vagy vegye fel a kapcsolatot velünk a megadott elérhetőségeink egyikén",
       }
@@ -151,6 +151,7 @@ const Header = ({ windowWidth }) => {
               </NavLink>
             </MDBNavbarBrand>
             <MDBNavbarToggler
+              aria-label="Menü gomb a navigációhoz"
               onClick={() => setSeo({ ...seo, collapse: !seo.collapse })}
             />
             <MDBCollapse isOpen={seo.collapse} navbar>
