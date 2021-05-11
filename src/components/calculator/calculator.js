@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   MDBContainer,
   MDBBtn,
-  MDBInput,
   MDBIcon,
   MDBRow,
   MDBCol,
@@ -45,8 +44,8 @@ const Header = styled.div`
 `
 
 const Warning = styled.span`
-  font-size: 0.8rem;
-  color: orangered;
+  font-size: 0.9rem;
+  color: #8f3900;
   padding: 1rem;
   text-align: center;
 `
@@ -121,6 +120,14 @@ const Tag = styled.p`
   font-size: 1.3rem;
 `
 
+const Label = styled.label`
+  color: #585756;
+`
+
+const Input = styled.input`
+  padding: 0.6rem 0.4rem;
+`
+
 const Calculator = () => {
   const { process } = useSelector(state => state.calculator)
   const dispatch = useDispatch()
@@ -190,7 +197,7 @@ const Calculator = () => {
 
                 <CardCol>
                   <form className="mx-3 grey-text">
-                    <label htmlFor="type"> Vállalkozása típusa</label>
+                    <Label htmlFor="type"> Vállalkozása típusa</Label>
                     <Select
                       className={cls}
                       id="type"
@@ -218,11 +225,18 @@ const Calculator = () => {
                       <Kata>
                         <Tag>Ön vagy az Ön cége KATÁS?</Tag>
                         <div>
-                          <MDBBtn onClick={computeKata} icon="thumbs-up">
+                          <MDBBtn
+                            onClick={computeKata}
+                            aria-label="Igen válasz az Ön vagy az Ön cége KATÁS kérdésre"
+                            icon="thumbs-up"
+                          >
                             Igen
                             <MDBIcon icon="thumbs-up" className="ml-2" far />
                           </MDBBtn>
-                          <MDBBtn onClick={activateMoreSelect}>
+                          <MDBBtn
+                            aria-label="Nem válasz az Ön vagy az Ön cége KATÁS kérdésre"
+                            onClick={activateMoreSelect}
+                          >
                             Nem{" "}
                             <MDBIcon icon="thumbs-down" className="ml-2" far />
                           </MDBBtn>
@@ -230,12 +244,12 @@ const Calculator = () => {
                       </Kata>
                     </Collapse>
                     <Collapse collapse={process.collapseMore}>
-                      <label htmlFor="numberOfB">
+                      <Label htmlFor="numberOfB">
                         {" "}
                         Bizonylatok száma havonta(kp-s számlák, pénztár napi
                         zárások, átutalásos számlák,bankszámlakivonatokon
                         szereplő tételek )
-                      </label>
+                      </Label>
                       <Select
                         className="browser-default custom-select"
                         id="numberOfB"
@@ -265,7 +279,7 @@ const Calculator = () => {
                           500 felett{" "}
                         </option>
                       </Select>
-                      <label htmlFor="netto"> Éves nettó árbevétel</label>
+                      <Label htmlFor="netto"> Éves nettó árbevétel</Label>
                       <Select
                         className="browser-default custom-select"
                         id="netto"
@@ -289,7 +303,7 @@ const Calculator = () => {
                           500 millió felett
                         </option>
                       </Select>
-                      <label htmlFor="numberOfA"> Áfa gyakorisága</label>
+                      <Label htmlFor="numberOfA"> Áfa gyakorisága</Label>
                       <Select
                         className="browser-default custom-select"
                         id="numberOfA"
@@ -313,13 +327,13 @@ const Calculator = () => {
                           éves
                         </option>
                       </Select>
-                      <label htmlFor="numberOfD">Devizás forgalom</label>
+                      <Label htmlFor="numberOfD">Devizás forgalom</Label>
                       <select
                         className="browser-default custom-select"
                         id="numberOfD"
                         name="numberOfD"
                         value={process.numberOfD}
-                        onChange={handleChange}
+                        onBlur={handleChange}
                       >
                         <option name="numberOfD" value={NumberOfD.Nem}>
                           Nem
@@ -339,19 +353,20 @@ const Calculator = () => {
                       </select>
                     </Collapse>
                     <InputBox>
-                      <label htmlFor="fix">Havidíjas alkalmazottak száma</label>
-                      <input
+                      <Label htmlFor="fix">Havidíjas alkalmazottak száma</Label>
+                      <Input
                         onChange={handleChange}
+                        id="fix"
                         name="fix"
                         type="text"
                         group
                       />
                     </InputBox>
                     <InputBox>
-                      <label htmlFor="fix">
+                      <Label htmlFor="other">
                         Nem havidíjas alkalmazottak száma
-                      </label>
-                      <input
+                      </Label>
+                      <Input
                         onChange={handleChange}
                         id="other"
                         name="other"
@@ -366,6 +381,7 @@ const Calculator = () => {
             <MDBCardFooter>
               <Modal id={"table"}>
                 <Btn
+                  aria-label="Kalkuláció gomb"
                   color="unique"
                   disabled={process?.disabled}
                   onClick={computeValue}

@@ -40,6 +40,11 @@ const Card = styled(MDBCard)`
 `
 const Col = styled(MDBCol)`
   margin-top: 4rem;
+  margin-right: 0.6rem;
+  margin-left: .6rem;
+  border: 1px solid lightgray;
+  padding: 2rem;
+  border-radius: 0.4rem;
 `
 
 const Note = styled(MDBTypography)`
@@ -60,6 +65,7 @@ const Typo = styled(MDBTypography)`
 
 const CardTitle = styled(MDBCardTitle)`
   font-size: 1.25rem;
+  color: #0f5875;
 `
 const Contact = () => {
   const { form } = useSelector(state => state.contact)
@@ -146,7 +152,7 @@ const Contact = () => {
         </Row>
 
         <Row center>
-          <Col lg="8">
+          <Col lg="6">
             <form onSubmit={onSubmit} className="needs-validation" noValidate>
               <p className="h5 text-center mb-4">Írjon nekünk</p>
               <div className="grey-text">

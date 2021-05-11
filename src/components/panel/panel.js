@@ -1,4 +1,4 @@
-import { MDBCard, MDBCardBody, MDBCardText, MDBIcon } from "mdbreact"
+import { MDBCard, MDBCardBody,  MDBIcon } from "mdbreact"
 import React, { useState } from "react"
 import styled from "styled-components"
 
