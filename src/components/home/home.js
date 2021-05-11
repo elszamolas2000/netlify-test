@@ -3,8 +3,6 @@ import React from "react"
 import {
   FacebookIcon,
   FacebookShareButton,
-  InstapaperIcon,
-  InstapaperShareButton,
   TwitterIcon,
   TwitterShareButton,
   ViberIcon,
@@ -17,7 +15,7 @@ import SimpleFade from "../fade/simpleFade"
 import withWindowSize from "../hoc/withWindowSize"
 import Panel from "../panel/panel"
 import Heading from "../title/title"
-import Bubbles from "../../assets/bubbles.svg"
+
 
 const Container = styled(MDBContainer)`
   width: 100%;
@@ -80,13 +78,7 @@ const Header = styled.h1`
     font-size: 2rem;
   }
 `
-// const Icon = styled(Bubbles)`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 1400px;
-//   height:150px;
-// `
+
 const url = "https://elszamolas2000bt.hu"
 const title = "Az első számú könyvelőiroda Egerben"
 const Home = ({ windowWidth }) => (
@@ -111,7 +103,7 @@ const Home = ({ windowWidth }) => (
           <WhatsappIcon size={32} round={true} />
         </WhatsappShareButton>
       </SharedBox>
-      {/* <Icon /> */}
+
     </HeaderBox>
 
     <SimpleFade>
