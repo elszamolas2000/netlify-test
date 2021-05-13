@@ -1,4 +1,10 @@
-import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdbreact"
+import {
+  MDBCol,
+  MDBContainer,
+  MDBRow,
+  MDBTooltip,
+  MDBTypography,
+} from "mdbreact"
 import React from "react"
 import {
   FacebookIcon,
@@ -15,7 +21,6 @@ import SimpleFade from "../fade/simpleFade"
 import withWindowSize from "../hoc/withWindowSize"
 import Panel from "../panel/panel"
 import Heading from "../title/title"
-
 
 const Container = styled(MDBContainer)`
   width: 100%;
@@ -86,24 +91,35 @@ const Home = ({ windowWidth }) => (
     <HeaderBox>
       <Header>Könyvelés Egerben</Header>
       <SharedBox>
-        <FacebookShareButton hashtag="könyvelés" quote={title} url={url}>
-          <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
-        <TwitterShareButton
-          title={title}
-          hashtags={["könyvelés", "elszámolas"]}
-          url={url}
-        >
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <ViberShareButton url={url} title={title}>
-          <ViberIcon size={32} round={true} />
-        </ViberShareButton>
-        <WhatsappShareButton url={url} title={title}>
-          <WhatsappIcon size={32} round={true} />
-        </WhatsappShareButton>
+        <MDBTooltip domElement tag="span" placement="top">
+          <FacebookShareButton hashtag="könyvelés" quote={title} url={url}>
+            <FacebookIcon size={32} round={true} />
+          </FacebookShareButton>
+          <span>Facebook megosztás</span>
+        </MDBTooltip>
+        <MDBTooltip domElement tag="span" placement="top">
+          <TwitterShareButton
+            title={title}
+            hashtags={["könyvelés", "elszámolas"]}
+            url={url}
+          >
+            <TwitterIcon size={32} round={true} />
+          </TwitterShareButton>
+          <span>Twitter megosztás</span>
+        </MDBTooltip>
+        <MDBTooltip domElement tag="span" placement="top">
+          <ViberShareButton url={url} title={title}>
+            <ViberIcon size={32} round={true} />
+          </ViberShareButton>
+          <span>Viber megosztás</span>
+        </MDBTooltip>
+        <MDBTooltip domElement tag="span" placement="top">
+          <WhatsappShareButton url={url} title={title}>
+            <WhatsappIcon size={32} round={true} />
+          </WhatsappShareButton>
+          <span>Whatsapp megosztás</span>
+        </MDBTooltip>
       </SharedBox>
-
     </HeaderBox>
 
     <SimpleFade>

@@ -5,7 +5,6 @@ import {
   MDBCol,
   MDBBtn,
   MDBIcon,
-  MDBInput,
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
@@ -41,7 +40,7 @@ const Card = styled(MDBCard)`
 const Col = styled(MDBCol)`
   margin-top: 4rem;
   margin-right: 0.6rem;
-  margin-left: .6rem;
+  margin-left: 0.6rem;
   border: 1px solid lightgray;
   padding: 2rem;
   border-radius: 0.4rem;
@@ -66,6 +65,12 @@ const Typo = styled(MDBTypography)`
 const CardTitle = styled(MDBCardTitle)`
   font-size: 1.25rem;
   color: #0f5875;
+`
+
+const Label = styled.label`
+  margin-top: 1.5rem;
+  color: #212121;
+  margin-left: .5rem;
 `
 const Contact = () => {
   const { form } = useSelector(state => state.contact)
@@ -156,58 +161,76 @@ const Contact = () => {
             <form onSubmit={onSubmit} className="needs-validation" noValidate>
               <p className="h5 text-center mb-4">Írjon nekünk</p>
               <div className="grey-text">
-                <MDBInput
-                  label="Az Ön neve"
-                  icon="user"
-                  group
-                  type="text"
-                  name="name"
-                  className="form-control"
-                  success="right"
-                  required
-                  // value={form.formName}
-                  onChange={onChange}
-                />
-
-                <MDBInput
-                  label="Az Ön email címe"
-                  icon="envelope"
-                  group
-                  type="email"
-                  validate
-                  error="wrong"
-                  name="email"
-                  success="right"
-                  required
-                  // value={form.email}
-                  onChange={onChange}
-                />
-                <div className="invalid-feedback">
-                  Please provide a valid city.
+                <Label htmlFor="name">Az Ön neve</Label>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon">
+                      <i className="fa fa-user prefix"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="form-control"
+                    aria-label="Az üzenetküldő neve"
+                    required
+                    onChange={onChange}
+                  />
                 </div>
-                <MDBInput
-                  onChange={onChange}
-                  // value={form.subject}
-                  label="Tárgy"
-                  icon="tag"
-                  group
-                  type="text"
-                  validate
-                  error="wrong"
-                  success="right"
-                  name="subject"
-                  required
-                />
-                <MDBInput
-                  onChange={onChange}
-                  // value={form.content}
-                  type="textarea"
-                  rows="4"
-                  label="Az Ön üzenete"
-                  icon="pencil-alt"
-                  name="content"
-                  required
-                />
+
+                <Label htmlFor="email">Az Ön email címe</Label>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon">
+                      <i className="fa fa-envelope prefix"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="form-control"
+                    aria-label="Az üzenetküldő email címe"
+                    required
+                    onChange={onChange}
+                  />
+                </div>
+                <Label htmlFor="name">Tárgy</Label>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon">
+                      <i className="fa fa-tag prefix"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    className="form-control"
+                    aria-label="Tárgy"
+                    required
+                    onChange={onChange}
+                  />
+                </div>
+                <Label htmlFor="content">Az Ön üzenete</Label>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon">
+                      <i className="fa fa-pencil-alt prefix"></i>
+                    </span>
+                  </div>
+                  <textarea
+                    type="text"
+                    id="content"
+                    name="content"
+                    className="form-control"
+                    aria-label="Az Ön üzenete"
+                    required
+                    rows={4}
+                    onChange={onChange}
+                  />
+                </div>
               </div>
               <Note tag="p">
                 Az itt megadott adatokat semmilyen formában nem tároljuk,
@@ -215,7 +238,7 @@ const Contact = () => {
                 töröljük.
               </Note>
               <div className="text-center">
-                <MDBBtn type="submit" outline color="secondary">
+                <MDBBtn type="submit" outline color="unique">
                   Küldés
                   <MDBIcon far icon="paper-plane" className="ml-1" />
                 </MDBBtn>

@@ -6,17 +6,26 @@ export const CarouselImg = () => {
       query {
         first: file(relativePath: { eq: "first.jpg" }) {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              placeholder: TRACED_SVG
+              formats: [AUTO, WEBP, AVIF, JPG]
+            )
           }
         }
         second: file(relativePath: { eq: "second.jpg" }) {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              placeholder: TRACED_SVG
+              formats: [AUTO, WEBP, AVIF, JPG]
+            )
           }
         }
         third: file(relativePath: { eq: "third.jpg" }) {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              placeholder: TRACED_SVG
+              formats: [AUTO, WEBP, AVIF, JPG]
+            )
           }
         }
       }
