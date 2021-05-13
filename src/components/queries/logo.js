@@ -6,7 +6,7 @@ const Logo = () => {
       query {
         data: file(relativePath: { eq: "logo.jpg" }) {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder:TRACED_SVG)
           }
         }
       }

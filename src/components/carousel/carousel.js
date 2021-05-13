@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useLayoutEffect, useState } from "react"
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -20,6 +20,11 @@ const CarouselWrapper = styled.div`
   overflow: hidden;
 `
 const Carousel = ({ windowWidth }) => {
+  const [matches, setMatches] = useState()
+
+  useLayoutEffect(() => {
+    setMatches(() => windowWidth < 1100)
+  }, [windowWidth])
   const handleAnimation = () => {
     return (
       <div>
@@ -76,7 +81,7 @@ const Carousel = ({ windowWidth }) => {
                 className="d-block w-100"
               />
               <MDBMask overlay="black-strong" className="flex-center">
-                {windowWidth < 1100 ? (
+                {matches && (
                   <SimpleSlide direction={"left"}>
                     <Card
                       icon="briefcase"
@@ -84,9 +89,8 @@ const Carousel = ({ windowWidth }) => {
                       text="Könyvviteli szolgáltatások Önre szabva"
                     />
                   </SimpleSlide>
-                ) : (
-                  active
                 )}
+                {!matches && active}
               </MDBMask>
             </MDBView>
           </MDBCarouselItem>
@@ -98,7 +102,7 @@ const Carousel = ({ windowWidth }) => {
                 alt="A második kép"
               />
               <MDBMask overlay="black-strong" className="flex-center">
-                {windowWidth < 1100 ? (
+                {matches && (
                   <SimpleSlide direction={"right"}>
                     <Card
                       icon="address-book"
@@ -106,9 +110,8 @@ const Carousel = ({ windowWidth }) => {
                       text="Ügyfeleink helyett mi tartjuk a kapcsolatot a NAV-val"
                     />
                   </SimpleSlide>
-                ) : (
-                  active
                 )}
+                {!matches && active}
               </MDBMask>
             </MDBView>
           </MDBCarouselItem>
@@ -120,7 +123,7 @@ const Carousel = ({ windowWidth }) => {
                 alt="A harmadik kép"
               />
               <MDBMask overlay="black-strong" className="flex-center">
-                {windowWidth < 1100 ? (
+                {matches && (
                   <SimpleSlide direction={"up"}>
                     <Card
                       icon="hand-holding-usd"
@@ -128,9 +131,8 @@ const Carousel = ({ windowWidth }) => {
                       text="50% kedvezmény az első két hónapban a könyvelési díjból."
                     />
                   </SimpleSlide>
-                ) : (
-                  active
                 )}
+                {!matches && active}
               </MDBMask>
             </MDBView>
           </MDBCarouselItem>
