@@ -19,7 +19,7 @@ const Copyright = styled(MDBContainer)`
 
 const Link = styled.a`
   transition: all 0.3s ease-in;
-  &:hover{
+  &:hover {
     color: #39a2ae;
   }
 `
@@ -37,7 +37,7 @@ const Footer = () => {
         <MDBContainer fluid>
           <MDBRow center>
             <Link
-              href="https://github.com/Pityubak"
+              href="https://www.pityubak.ml/"
               rel="noopener noreferrer"
               target="_blank"
             >

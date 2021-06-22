@@ -9,7 +9,7 @@ import { resetForm, setForm } from "../../slices/contact"
 
 
 
-const Notification = ({ name, title, message, icon }) => {
+const Notification = ({ name, title, message }) => {
   const { form } = useSelector(state => state.contact)
   const dispatch = useDispatch()
   const onClose = () => {

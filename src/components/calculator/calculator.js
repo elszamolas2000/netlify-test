@@ -137,7 +137,7 @@ const Calculator = () => {
   }
 
   const toggle = e => {
-    const { name, value } = e.target
+    const { value } = e.target
     dispatch(toggleByType(value))
     if (value === Type.NP) {
       navigateToTable()

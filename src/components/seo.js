@@ -29,6 +29,7 @@ function SEO({ description, meta, title }) {
       htmlAttributes={{
         lang:"hu"
       }}
+      link={[{ rel: "canonical", href:"https://elszamolas2000bt.hu" }]}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
@@ -72,8 +73,6 @@ function SEO({ description, meta, title }) {
 
       ].concat(meta)}
     >
-
-      <link rel="canonical" href="https://elszamolas2000bt.hu" />
     </Helmet>
   )
 }
