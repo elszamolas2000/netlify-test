@@ -24,7 +24,7 @@ import SimpleFade from "../fade/simpleFade"
 const ContactPanel = styled(MDBContainer)`
   padding: 1rem;
   margin-top: 7rem;
-  overflow: hidden;
+  // overflow: hidden;
   text-align: center;
 `
 const Row = styled(MDBRow)`
@@ -66,11 +66,19 @@ const CardTitle = styled(MDBCardTitle)`
   font-size: 1.25rem;
   color: #0f5875;
 `
+const FBLink = styled.a`
+  font-size: 1.25rem;
+  color: #0f5875;
+  transition: all 0.4s ease-in-out;
+  &:hover{
+    color: #885053;
+  }
+`
 
 const Label = styled.label`
   margin-top: 1.5rem;
   color: #212121;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 `
 const Contact = () => {
   const { form } = useSelector(state => state.contact)
@@ -123,7 +131,7 @@ const Contact = () => {
         name="success_modal"
         icon="check-circle"
         title="Sikeres üzenetküldés"
-        message="Üzenetét elküldtük. Hamarosan fel vesszük Önnel a kapcsolatot."
+        message="Üzenetét elküldtük. Hamarosan felvesszük Önnel a kapcsolatot."
       />
 
       <Notification
@@ -151,6 +159,13 @@ const Contact = () => {
                 <CardText>elszamolas2000bt@gmail.com</CardText>
                 <CardTitle tag="p">Telefonszám:</CardTitle>
                 <CardText>+36/30-8696-420</CardText>
+                <FBLink
+                  href="https://www.facebook.com/pages/category/Financial-Service/Elsz%C3%A1mol%C3%A1s-2000-BT-113031620117233/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Facebook oldalunk
+                </FBLink>
               </MDBCardBody>
             </Card>
           </MDBCol>

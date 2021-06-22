@@ -53,12 +53,7 @@ const Title = styled.strong`
   }}
 `
 const Header = ({ windowWidth }) => {
-  const [seo, setSeo] = useState({
-    title: "Elszámolás 2000 Bt.-Könyvelés Egerben",
-    description:
-      "Az Elszámolás 2000 Bt. több éves tapasztalattal végzi precíz munkáját a könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés és könyvelési tanácsadás területén Egerben.",
-    collapse: false,
-  })
+  const [collapse, setCollapse] = useState(false)
 
   const scrollToDiv = id => {
     const anchor = document.querySelector(id)
@@ -67,63 +62,25 @@ const Header = ({ windowWidth }) => {
       block: "start",
       inline: "nearest",
     })
-    let vcc = {
-      title: "Könyvelés felsőfokon Egerben",
-      description:
-        "Az Elszámolás 2000 Bt. több éves tapasztalattal végzi precíz munkáját a könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés és könyvelési tanácsadás területén Egerben.",
-    }
-    if (id === "#home") {
-      vcc = {
-        title: "Bemutatkozás",
-        description:
-          "Az Elszámolás 2000 Bt. bemutatkozás: precizítás, megbízhatóság, magas minőség",
-      }
-    }
-    if (id === "#service") {
-      vcc = {
-        title: "Szolgáltatásaink",
-        description:
-          "Szolgáltatásaink: könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés,munkaügy, könyvelési tanácsadás.",
-      }
-    }
-    if (id === "#calculator") {
-      vcc = {
-        title: "Könyvelési díj kalkulátor",
-        description:
-          "A könyvelési díj kalkulátorral kiszámolhatja, mennyibe kerülne Önnek, ha igénybe venné a szolgáltatásainkat.",
-      }
-    }
-    if (id === "#contact") {
-      vcc = {
-        title: "Kapcsolat",
-        description:
-          "Küldjön üzenetet, vagy vegye fel a kapcsolatot velünk a megadott elérhetőségeink egyikén",
-      }
-    }
-    if (windowWidth > 992) {
-      setSeo({
-        ...seo,
-        title: vcc.title,
-        description: vcc.description,
-      })
-    }
+
     if (windowWidth < 992) {
-      const collaspse = id === "#welcome" ? false : !seo.collapse
-      setSeo({
-        collapse: collaspse,
-        title: vcc.title,
-        description: vcc.description,
-      })
+      const collaspse = id === "#welcome" ? false : !collapse
+      setCollapse(collaspse)
     }
   }
   const image = Logo()?.data?.childImageSharp.gatsbyImageData
   return (
     <>
-      <SEO title={seo.title} description={seo.description} />
+      <SEO
+        title={"Könyvelés felsőfokon Egerben"}
+        description={
+          "Az Elszámolás 2000 Bt. több éves tapasztalattal végzi precíz munkáját a könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés és könyvelési tanácsadás területén Egerben."
+        }
+      />
       <MDBContainer fluid>
         <header>
           <Navbar
-            sm={(seo.collapse && windowWidth < 400).toString()}
+            sm={(collapse && windowWidth < 400).toString()}
             color="stylish-color"
             fixed="top"
             dark
@@ -152,9 +109,9 @@ const Header = ({ windowWidth }) => {
             </MDBNavbarBrand>
             <MDBNavbarToggler
               aria-label="Menü gomb a navigációhoz"
-              onClick={() => setSeo({ ...seo, collapse: !seo.collapse })}
+              onClick={() => setCollapse(!collapse )}
             />
-            <MDBCollapse isOpen={seo.collapse} navbar>
+            <MDBCollapse isOpen={collapse} navbar>
               <MDBNavbarNav right>
                 <div>
                   <NavLink
