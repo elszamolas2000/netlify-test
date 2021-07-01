@@ -54,7 +54,31 @@ const Title = styled.strong`
 `
 const Header = ({ windowWidth }) => {
   const [collapse, setCollapse] = useState(false)
-
+  const schemeMarkup = {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    name: "Elszámolás 2000 Bt.",
+    image:
+      "https://elszamolas2000bt.hu/static/3b4e221b44c21bc74254c678f7805949/1f187/logo.webp",
+    "@id": "",
+    url: "https://elszamolas2000bt.hu/",
+    telephone: "+36/30-8696-420",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Veres Péter út 3.",
+      addressLocality: "Eger",
+      postalCode: "3300",
+      addressCountry: "HU",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    sameAs:
+      "https://www.facebook.com/pages/category/Financial-Service/Elsz%C3%A1mol%C3%A1s-2000-BT-113031620117233/",
+  }
   const scrollToDiv = id => {
     const anchor = document.querySelector(id)
     anchor.scrollIntoView({
@@ -76,6 +100,7 @@ const Header = ({ windowWidth }) => {
         description={
           "Az Elszámolás 2000 Bt. több éves tapasztalattal végzi precíz munkáját a könyvelés, bérszámfejtés, adóbevallás, konzultáció, mérleg készítés és könyvelési tanácsadás területén Egerben."
         }
+        schemeMarkup={schemeMarkup}
       />
       <MDBContainer fluid>
         <header>
@@ -109,7 +134,7 @@ const Header = ({ windowWidth }) => {
             </MDBNavbarBrand>
             <MDBNavbarToggler
               aria-label="Menü gomb a navigációhoz"
-              onClick={() => setCollapse(!collapse )}
+              onClick={() => setCollapse(!collapse)}
             />
             <MDBCollapse isOpen={collapse} navbar>
               <MDBNavbarNav right>
